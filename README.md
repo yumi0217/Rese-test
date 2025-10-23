@@ -10,7 +10,9 @@
 #### Laravel環境構築
   1. docker-compose exec php bash
   2. composer install
-  3. 「.env.example」ファイルを 「.env」ファイルに命名を変更。または、新しく.envファイルを作成
+  3. .env の作成（開発／本番）
+  - 開発環境：.env.example をコピーして .env を作成
+  - 本番環境（ローカル“本番”運用想定）：下のテンプレ（.env.production の内容）を .env にコピー
   4. .envに以下の環境変数を追加
 ```
 DB_CONNECTION=mysql
@@ -20,6 +22,65 @@ DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ``` 
+- 本番用の.env.productionを作成
+```
+APP_NAME=Laravel
+APP_ENV=production
+APP_KEY=base64:ewkFfErVglIQqtODhFcNGrs0iwgr712pej+DSEMJP24=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DRIVER=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=test@example.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+
+STRIPE_SECRET=
+STRIPE_PUBLIC=
+```
   5. アプリケーションキーの作成
 ```
 php artisan key:generate

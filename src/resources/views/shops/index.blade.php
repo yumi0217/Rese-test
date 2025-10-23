@@ -62,7 +62,6 @@
             of <strong>{{ $shops->total() }}</strong> results
         </div>
 
-        {{-- rese テンプレを使う（作ってあるならそのまま） --}}
         {{ $shops->withQueryString()->onEachSide(1)->links('vendor.pagination.cute') }}
     </div>
 
