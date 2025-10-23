@@ -1,0 +1,15 @@
+.menu-header {
+    background: #fff;
+    padding: 12px 20px;
+    /* ← この padding が効いて左に余白つけられる */
+    position: relative;
+    /* 子要素の配置基準にする */
+}
+
+.menu-close {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+    margin-left: 100px;
+    /* ← 左端から少し内側にずらす */
+}

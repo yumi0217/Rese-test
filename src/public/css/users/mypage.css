@@ -1,0 +1,392 @@
+/* ページ余白／最大幅 */
+.mypage {
+    padding: 28px 16px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 見出し */
+.mypage__head {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.mypage__title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: .02em;
+}
+
+/* 2カラムグリッド */
+.mypage__grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .mypage__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 10px 0 12px;
+    color: #111827;
+}
+
+/* ===== 予約カード（左側：青いカード） ===== */
+.reserve-card {
+    background: #2563eb;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .10);
+    padding: 16px;
+    position: relative;
+}
+
+.reserve-card__head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.reserve-card__icon {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .15);
+    border-radius: 999px;
+    font-size: 16px;
+}
+
+.reserve-card__title {
+    font-weight: 800;
+}
+
+.reserve-card__close button,
+.reserve-card__close--dummy {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .2);
+    color: #fff;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.reserve-card__close button:hover {
+    filter: brightness(.95);
+}
+
+.reserve-card__close--dummy {
+    cursor: default;
+}
+
+/* 予約の明細 */
+.reserve-card__list {
+    background: rgba(255, 255, 255, .12);
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.reserve-card__list .row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+.reserve-card__list dt {
+    opacity: .95;
+}
+
+.reserve-card__list dd {
+    text-align: right;
+}
+
+/* 空データ表示 */
+.empty {
+    color: #6b7280;
+    background: #f9fafb;
+    border: 1px dashed #e5e7eb;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+/* ===== お気に入り（右側） ===== */
+.fav-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+@media (max-width: 640px) {
+    .fav-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 店カード（一覧と同系統） */
+.shop-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+    display: flex;
+    flex-direction: column;
+}
+
+.thumb {
+    display: block;
+    height: 160px;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s;
+}
+
+.thumb:hover img {
+    transform: scale(1.03);
+}
+
+.body {
+    padding: 12px 14px;
+}
+
+.title {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.meta {
+    display: flex;
+    gap: 6px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.actions {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    filter: brightness(.97);
+}
+
+.heart {
+    font-size: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: .35;
+}
+
+.heart.on {
+    color: #ef4444;
+    opacity: 1;
+}
+
+.reserve-card__actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+.reserve-card__actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #111827
+}
+
+.reserve-card__actions .btn.primary {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb
+}
+
+.reserve-card__actions .btn.primary:hover {
+    filter: brightness(.96)
+}
+
+.reserve-card__actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.reserve-card__actions .btn {
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reserve-card__actions .btn.primary {
+    background: #2563eb;
+    color: #fff;
+    border: 1px solid #2563eb;
+}
+
+.reserve-card__actions .btn.secondary {
+    background: #fff;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+}
+
+.reserve-card__actions .btn.secondary:hover {
+    background: #f9fafb;
+}
+
+/* ===== Responsive (<= 768px) ===== */
+@media (max-width: 768px) {
+
+    /* 余白・見出し少しコンパクトに */
+    .mypage {
+        padding: 20px 12px 28px;
+    }
+
+    .mypage__title {
+        font-size: 24px;
+    }
+
+    /* 2カラム → 1カラムに */
+    .mypage__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* 青い予約カードの中身を詰める */
+    .reserve-card {
+        border-radius: 12px;
+        padding: 14px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
+    }
+
+    .reserve-card__head {
+        grid-template-columns: auto 1fr auto;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .reserve-card__title {
+        font-size: 16px;
+    }
+
+    /* 明細を“縦積み”にして読みやすく */
+    .reserve-card__list {
+        padding: 10px;
+    }
+
+    .reserve-card__list .row {
+        grid-template-columns: 1fr;
+        /* ラベル→値を縦並び */
+        gap: 2px;
+        font-size: 13px;
+    }
+
+    .reserve-card__list dt {
+        opacity: .85;
+    }
+
+    .reserve-card__list dd {
+        text-align: left;
+        /* 右寄せ→左寄せ */
+        word-break: break-word;
+        /* 長文対策 */
+    }
+
+    /* 予約カードのボタンは縦積み・幅いっぱい */
+    .reserve-card__actions {
+        gap: 10px;
+    }
+
+    .reserve-card__actions .btn {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    /* お気に入りカード：画像少し低めにして崩れ防止 */
+    .thumb {
+        height: 140px;
+    }
+
+    .body {
+        padding: 10px 12px;
+    }
+
+    .title {
+        font-size: 15px;
+    }
+
+    /* お気に入りのグリッドは既に 640px で 1列になるが、
+       768px でも少し余裕を持たせる */
+    .fav-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    /* カード内ボタンのタップしやすさ向上 */
+    .btn {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .heart {
+        font-size: 20px;
+    }
+}
+
+/* さらに狭い端末（<= 480px）微調整 */
+@media (max-width: 480px) {
+    .mypage__title {
+        font-size: 22px;
+    }
+
+    .thumb {
+        height: 120px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+}

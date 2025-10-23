@@ -1,0 +1,157 @@
+.qr-page {
+    max-width: 640px;
+    margin: 24px auto;
+    padding: 0 16px
+}
+
+.qr-page .card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04)
+}
+
+.title {
+    font-weight: 800;
+    margin: 0 0 12px
+}
+
+.qr-box {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 14px
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px
+}
+
+.summary span {
+    display: inline-block;
+    color: #6b7280;
+    margin-right: 6px
+}
+
+.note {
+    color: #6b7280;
+    margin: 6px 0 12px
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    text-decoration: none
+}
+
+.btn.ghost:hover {
+    background: #f9fafb
+}
+
+.qr-raw {
+    margin: 12px 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.qr-text {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #111827;
+    word-break: break-all;
+}
+
+.btn.copy {
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #374151;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.btn.copy:hover {
+    background: #f9fafb;
+}
+
+/* ===== Responsive (<= 768px) ===== */
+@media (max-width: 768px) {
+    .qr-page {
+        margin: 18px auto;
+        padding: 0 12px;
+    }
+
+    .qr-page .card {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .qr-box {
+        margin: 8px 0 12px;
+    }
+
+    /* サマリーを1カラムに */
+    .summary {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .qr-text {
+        font-size: 13.5px;
+        padding: 6px 8px;
+    }
+
+    /* ボタンは指で押しやすい幅に */
+    .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 14px;
+    }
+
+    /* コピー行の折返し最適化 */
+    .qr-raw {
+        gap: 6px;
+    }
+}
+
+/* ===== Tight phones (<= 480px) ===== */
+@media (max-width: 480px) {
+    .title {
+        font-size: 17px;
+    }
+
+    /* 余白をさらに詰める */
+    .qr-page .card {
+        padding: 14px;
+    }
+
+    /* モノスペは一段階小さめ */
+    .qr-text {
+        font-size: 13px;
+    }
+
+    /* メモ文言も少し小さく */
+    .note {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,206 @@
+/* ===== Reset (必要最低限) ===== */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ===== Base ===== */
+body {
+    background: #eeeeee;
+    color: #111827;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
+.site-header {
+    background: #eeeeee;
+    /* 重複定義はこの1つで統一 */
+    padding: 12px 20px;
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0;
+    /* 上の .site-header に持たせたので 0 */
+}
+
+.logo img {
+    height: 50px;
+    display: block;
+}
+
+/* --- 検索バー（ロゴ横のピル） --- */
+.header-search.filter-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 10px 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+    width: 600px;
+    /* デスクトップの基準幅 */
+    max-width: 100%;
+}
+
+/* セレクト */
+.header-search .pill-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px 36px 10px 12px;
+    min-width: 140px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #111827;
+    background-image:
+        linear-gradient(45deg, transparent 50%, #9ca3af 50%),
+        linear-gradient(135deg, #9ca3af 50%, transparent 50%),
+        linear-gradient(#e5e7eb, #e5e7eb);
+    background-position:
+        calc(100% - 18px) 16px,
+        calc(100% - 12px) 16px,
+        calc(100% - 28px) 6px;
+    background-size: 6px 6px, 6px 6px, 1px 20px;
+    background-repeat: no-repeat;
+}
+
+/* 検索入力＋ボタン */
+.header-search .pill-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 auto;
+    min-width: 0;
+    /* ← これで入力がはみ出さず縮む */
+}
+
+.header-search .pill-search input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    min-width: 0;
+    /* ← フレックス内で縮小可に */
+}
+
+.header-search .pill-btn {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #fff;
+    color: #fff;
+    /* アイコンだけならそのまま。テキストなら見えないので別途調整してね */
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.header-search .pill-btn:hover {
+    filter: brightness(.95);
+}
+
+/* ===== Main container ===== */
+.site-main {
+    padding: 24px 16px;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+
+/* 1024px以下：検索幅を少し縮める */
+@media (max-width:1024px) {
+    .header-search.filter-pill {
+        width: 520px;
+    }
+}
+
+/* 768px以下：ロゴ上／検索下に縦積み。入力が確実に収まるよう最適化 */
+@media (max-width:768px) {
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0;
+    }
+
+    .logo img {
+        height: 42px;
+    }
+
+    /* 検索ピルは幅100%で1段にまとめる */
+    .header-search.filter-pill {
+        order: 2;
+        /* ロゴの下に来る */
+        width: 100%;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    /* セレクトが長い場合は幅を少し抑える（折り返し回避） */
+    .header-search .pill-select {
+        min-width: 120px;
+        padding: 8px 34px 8px 10px;
+        font-size: 14px;
+    }
+
+    /* 入力はモバイルでも気持ち大きめ */
+    .header-search .pill-search input {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+
+    .header-search .pill-btn {
+        font-size: 22px;
+        padding: 8px 12px;
+    }
+}
+
+/* 480px以下：検索ピルを“縦並び”にしてギチギチ回避 */
+@media (max-width:480px) {
+    .header-search.filter-pill {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .header-search .pill-select {
+        width: 100%;
+    }
+
+    .header-search .pill-search {
+        width: 100%;
+    }
+
+    .header-search .pill-btn {
+        width: 100%;
+        /* ボタンを下で全幅に（アイコンだけなら削ってOK） */
+        font-size: 18px;
+    }
+}

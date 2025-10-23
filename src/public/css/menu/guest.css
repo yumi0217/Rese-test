@@ -1,0 +1,57 @@
+/* PC / タブレット横（768px以上）は現状キープ */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* 上寄せ */
+    height: calc(100vh - 60px);
+    /* ヘッダー60pxぶん差し引き */
+    padding-top: 30vh;
+    /* 上から寄せ */
+    gap: 20px;
+}
+
+.menu a {
+    font-size: 22px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* ===== 768px未満：タブレット縦・スマホ向け ===== */
+@media (max-width: 767.98px) {
+    .menu {
+        height: auto;
+        /* 高さ固定を解除してスクロール可に */
+        padding-top: 48px;
+        /* 余白を小さくして上から表示 */
+        padding-bottom: 32px;
+        gap: 14px;
+        /* 要素間隔を詰める */
+    }
+
+    .menu a {
+        display: block;
+        /* タップしやすいブロック化 */
+        width: min(92vw, 520px);
+        text-align: center;
+        font-size: 18px;
+        /* 文字を少し小さく */
+        line-height: 1.2;
+        padding: 14px 16px;
+        /* タップ領域を確保 */
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        background: #ffffff;
+    }
+
+    .menu a:hover {
+        text-decoration: none;
+        /* スマホはホバー無効化でOK */
+        filter: brightness(0.98);
+    }
+}

@@ -1,0 +1,553 @@
+/* ===== ページ幅 ===== */
+.shops-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== グリッド ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== カード ===== */
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
+    display: flex;
+    flex-direction: column;
+}
+
+.thumb {
+    display: block;
+    height: 170px;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s;
+}
+
+.thumb:hover img {
+    transform: scale(1.03);
+}
+
+.body {
+    padding: 14px;
+}
+
+.title {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.meta {
+    display: flex;
+    gap: 6px;
+    /* ハッシュタグの間隔 */
+    font-size: 13px;
+    color: #6b7280;
+    /* グレー */
+}
+
+/* ===== アクション ===== */
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.btn {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #e5e7eb;
+    cursor: pointer;
+    text-decoration: none;
+    /* ← 下線を消す */
+    display: inline-block;
+    /* ← aタグにも効くように */
+}
+
+.btn.primary {
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    /* 念のためここにも */
+}
+
+.heart {
+    font-size: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    /* ← 通常はグレーにしておく */
+    opacity: .35;
+    transition: color .15s ease, transform .1s ease;
+}
+
+.heart.on {
+    color: #ef4444;
+    /* ← on が付いたら赤 */
+    opacity: 1;
+}
+
+.heart.disabled {
+    opacity: .2;
+    cursor: not-allowed;
+}
+
+.empty {
+    text-align: center;
+    color: #6b7280;
+    margin: 40px 0;
+}
+
+/* ---- Pagination fix (scoped) ---- */
+/* ===== ページ幅 ===== */
+.shops-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ===== グリッド ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+@media (max-width:1024px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width:768px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width:480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== カード ===== */
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow .15s ease, transform .08s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .08);
+    transform: translateY(-1px);
+}
+
+.thumb {
+    display: block;
+    height: 170px;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s;
+}
+
+.thumb:hover img {
+    transform: scale(1.03);
+}
+
+.body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title {
+    font-weight: 700;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.meta span {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: 2px 8px;
+}
+
+/* ===== アクション ===== */
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.btn {
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.primary {
+    background: #2563eb;
+    color: #fff;
+    border: 1px solid #2563eb;
+}
+
+.btn.primary:hover {
+    filter: brightness(.96);
+}
+
+.heart {
+    font-size: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    opacity: .5;
+}
+
+.heart.on {
+    color: #ef4444;
+    opacity: 1;
+}
+
+.heart.is-disabled {
+    opacity: .25;
+    cursor: not-allowed;
+}
+
+.empty {
+    text-align: center;
+    color: #6b7280;
+    margin: 40px 0;
+}
+
+/* === 置き換え: pager を “中央寄せ” に === */
+.pager.cute {
+    margin: 28px 0 56px;
+    display: flex;
+    flex-direction: column;
+    /* ← 縦積み */
+    align-items: center;
+    /* ← 横中央 */
+    gap: 12px;
+}
+
+/* 件数テキストを中央に */
+.pager.cute .pager-info {
+    color: #6b7280;
+    font-size: 14px;
+    text-align: center;
+    /* ← 追加 */
+}
+
+.pager.cute .pager-info strong {
+    color: #111827;
+}
+
+/* ナビ本体（ボックスを中央に置く） */
+.cute-pager {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* ← 追加：中身の並び中央 */
+    gap: 10px;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, .82);
+    border: 1px solid #e8edf5;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, .06);
+    backdrop-filter: saturate(180%) blur(8px);
+    margin-top: 2px;
+    /* ← ほんの少し下に */
+}
+
+/* Prev/Next／数字ピルはそのまま（可愛い設定維持） */
+
+/* Prev/Next ピル */
+.cute-pager .pg-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #e6ebf3;
+    border-radius: 999px;
+    background: #fff;
+    color: #1f2937;
+    text-decoration: none;
+    line-height: 1;
+    transition: background .15s ease, border-color .15s ease, filter .15s ease;
+}
+
+.cute-pager .pg-btn:hover {
+    background: #f8fafc;
+    border-color: #dbe2ec;
+}
+
+.cute-pager .pg-btn.is-disabled {
+    opacity: .45;
+    pointer-events: none;
+}
+
+/* 数字ピル */
+.cute-pager .pg-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cute-pager .pg-item a,
+.cute-pager .pg-item span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #e6ebf3;
+    border-radius: 12px;
+    background: #fff;
+    color: #111827;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease;
+}
+
+.cute-pager .pg-item a:hover {
+    background: #f3f6fb;
+    border-color: #d7e1f4;
+}
+
+.cute-pager .pg-item.is-current span {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .15);
+}
+
+/* 省略記号 */
+.cute-pager .pg-ellipsis {
+    color: #9aa3b2;
+    padding: 0 6px;
+}
+
+/* SVG暴走対策（他CSSに勝つ） */
+.pager svg,
+.cute-pager svg {
+    width: 1em !important;
+    height: 1em !important;
+    transform: none !important;
+    position: static !important;
+    display: inline-block !important;
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+/* モバイルでは縦積み＆中央寄せ */
+@media (max-width: 640px) {
+    .pager.cute {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .pager.cute .pager-info {
+        text-align: center;
+    }
+
+    .cute-pager {
+        justify-content: center;
+    }
+}
+
+/* =========================
+   Responsive (<=768px)
+   ========================= */
+@media (max-width: 768px) {
+
+    /* 余白を少し広げて読みやすく */
+    .shops-page {
+        padding: 0 12px;
+    }
+
+    /* グリッドは既に 2 列指定済み。カード同士の間隔だけ少し詰める */
+    .grid {
+        gap: 14px;
+    }
+
+    /* サムネイルを少し低くしてファーストビューに収める */
+    .thumb {
+        height: 140px;
+    }
+
+    /* 本文余白と文字サイズのチューニング */
+    .body {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .title {
+        -webkit-line-clamp: 2;
+        font-size: 15px;
+    }
+
+    .meta {
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .meta span {
+        padding: 2px 6px;
+    }
+
+    /* アクション：ボタンを大きめ＆押しやすく */
+    .actions {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 12px;
+        min-height: 38px;
+    }
+
+    .heart {
+        font-size: 20px;
+    }
+
+    /* ページャを少しコンパクトに */
+    .pager.cute {
+        margin: 20px 0 40px;
+        gap: 10px;
+    }
+
+    .cute-pager {
+        gap: 8px;
+        padding: 6px 8px;
+    }
+
+    .cute-pager .pg-btn {
+        height: 32px;
+        padding: 0 10px;
+    }
+
+    .cute-pager .pg-item a,
+    .cute-pager .pg-item span {
+        min-width: 32px;
+        height: 32px;
+        padding: 0 10px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   Narrow (<=480px)
+   ========================= */
+@media (max-width: 480px) {
+
+    /* 1列は既に指定済み。余白とタップ領域を強化 */
+    .shops-page {
+        padding: 0 10px;
+    }
+
+    .grid {
+        gap: 12px;
+    }
+
+    .thumb {
+        height: 130px;
+    }
+
+    /* アクション：ボタンを横幅いっぱいに（お気に入りは右） */
+    .actions {
+        gap: 10px;
+    }
+
+    .btn.primary {
+        flex: 1 1 auto;
+    }
+
+    /* ページャは中央寄せ・小型化 */
+    .pager.cute {
+        gap: 8px;
+    }
+
+    .cute-pager {
+        padding: 6px;
+    }
+
+    .cute-pager .pg-btn {
+        height: 30px;
+        padding: 0 8px;
+    }
+
+    .cute-pager .pg-item a,
+    .cute-pager .pg-item span {
+        min-width: 28px;
+        height: 30px;
+        padding: 0 8px;
+        font-size: 13px;
+    }
+}

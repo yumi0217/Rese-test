@@ -1,0 +1,239 @@
+/* ===== Owner サイドバー（Admin風） ===== */
+.owner-wrap {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f7fb;
+    color: #111827;
+}
+
+/* サイドバー本体 */
+.aside {
+    width: 260px;
+    background: #0f172a;
+    /* 濃紺 */
+    padding: 20px 14px;
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ブランド（ロゴ＋タイトル） */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    margin-bottom: 18px;
+}
+
+.brand-icon {
+    font-size: 30px
+}
+
+.brand-title {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: .3px;
+}
+
+/* ナビ */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 6px 0 16px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: background .15s ease, color .15s ease;
+}
+
+.nav-item:hover {
+    background: #111827;
+    color: #fff
+}
+
+.nav-item.active {
+    background: #111827;
+    color: #fff;
+    font-weight: 700
+}
+
+/* ログアウト */
+.logout {
+    margin-top: auto
+}
+
+.logout-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #111827;
+    color: #fff
+}
+
+/* メイン領域 */
+.main {
+    flex: 1;
+    padding: 28px;
+}
+
+/* 見出しやカードは既存を流用。必要なら軽く調整 */
+.page {
+    max-width: 1000px;
+    margin: 0 auto
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: .02em;
+    margin: 0 0 16px
+}
+
+/* =========================
+   Responsive additions
+   ========================= */
+
+/* --- 1024px 以下：少しコンパクトに --- */
+@media (max-width: 1024px) {
+    .aside {
+        width: 240px;
+        padding: 16px 12px;
+    }
+
+    .brand-title {
+        font-size: 18px;
+    }
+
+    .main {
+        padding: 22px;
+    }
+
+    .page {
+        max-width: 920px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+}
+
+/* --- 768px 以下：サイドバーを上部帯に（横ナビ化） --- */
+@media (max-width: 768px) {
+    .owner-wrap {
+        display: block;
+    }
+
+    /* 上部固定のヘッダー風に */
+    .aside {
+        width: 100%;
+        padding: 12px 14px;
+        position: sticky;
+        top: 0;
+        z-index: 30;
+    }
+
+    .brand {
+        margin: 0 0 8px;
+        padding: 0;
+    }
+
+    /* ナビを横並び＋折り返し */
+    .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 8px 0 0;
+    }
+
+    .nav-item {
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
+
+    /* ログアウトを右端へ寄せる */
+    .logout {
+        margin-top: 0;
+        margin-left: auto;
+    }
+
+    .logout-btn {
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
+
+    .main {
+        padding: 16px;
+    }
+
+    .page {
+        max-width: 680px;
+    }
+
+    .page-title {
+        font-size: 24px;
+        margin: 6px 0 12px;
+    }
+}
+
+/* --- 560px 以下：さらにタイトに・ボタンはフル幅推奨 --- */
+@media (max-width: 560px) {
+    .brand-icon {
+        font-size: 26px;
+    }
+
+    .brand-title {
+        font-size: 16px;
+        letter-spacing: .2px;
+    }
+
+    .nav-item,
+    .logout-btn {
+        font-size: 14px;
+    }
+
+    .main {
+        padding: 14px;
+    }
+
+    .page {
+        padding: 0 10px;
+    }
+
+    /* もしページ内に .btn があるならフル幅推奨 */
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* --- 400px 以下：最小端末向け微調整 --- */
+@media (max-width: 400px) {
+    .nav {
+        gap: 6px;
+    }
+
+    .nav-item {
+        padding: 6px 8px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+}

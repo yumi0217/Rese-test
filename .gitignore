@@ -1,0 +1,6 @@
+docker/mysql/data/*
+!docker/mysql/data/.gitkeep
+docker/mysql/logs/*
+!docker/mysql/logs/.gitkeep
+src/.env
+src/.env.*

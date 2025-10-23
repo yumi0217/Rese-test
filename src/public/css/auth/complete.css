@@ -1,0 +1,90 @@
+/* 会員登録完了画面 */
+.complete-wrap {
+    min-height: calc(100vh - 60px);
+    /* ヘッダー分を差し引き */
+    background: #f3f4f6;
+    /* 薄いグレー */
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.card {
+    width: 100%;
+    max-width: 560px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+}
+
+.lead {
+    margin: 0 0 18px;
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid #2563eb;
+    transition: filter .15s ease, transform .02s ease;
+}
+
+.btn-primary:hover {
+    filter: brightness(.98);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* =========================
+   Responsive (<= 768px)
+   ========================= */
+@media (max-width: 768px) {
+    .complete-wrap {
+        padding: 16px;
+    }
+
+    .card {
+        max-width: 520px;
+        padding: 26px 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+    }
+
+    .lead {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        /* ボタンを横いっぱいに */
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+}
+
+/* さらに狭い画面（<= 420px）向け微調整 */
+@media (max-width: 420px) {
+    .card {
+        padding: 22px 14px;
+    }
+
+    .lead {
+        font-size: 18px;
+    }
+
+    .btn-primary {
+        padding: 12px;
+        font-size: 14.5px;
+    }
+}

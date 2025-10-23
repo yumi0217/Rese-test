@@ -1,0 +1,204 @@
+:root {
+    --bg: #0f172a;
+    --bg2: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --active: #2563eb;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: #f6f7f9;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif
+}
+
+.admin-wrap {
+    display: flex;
+    min-height: 100vh
+}
+
+/* sidebar */
+.aside {
+    width: 240px;
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 18px 14px;
+}
+
+.brand {
+    font-size: 28px;
+    /* ← ここで一気に大きく */
+    font-weight: 900;
+    letter-spacing: .02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    margin: 4px 6px 20px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.nav-item {
+    display: block;
+    color: var(--text);
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    opacity: .9
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, .06);
+    opacity: 1
+}
+
+.nav-item.active {
+    background: rgba(37, 99, 235, .18);
+    outline: 1px solid rgba(37, 99, 235, .35)
+}
+
+.logout {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, .08)
+}
+
+.logout-btn {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: 0;
+    color: var(--text);
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, .06)
+}
+
+/* main */
+.main {
+    flex: 1;
+    padding: 24px
+}
+
+/* ====== Responsive ====== */
+
+/* タブレット（<=1024px）：サイド幅少し細く */
+@media (max-width: 1024px) {
+    .aside {
+        width: 200px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .brand {
+        font-size: 24px;
+    }
+}
+
+/* スマホ・小さめタブレット（<=768px）：縦並びに切替 */
+@media (max-width: 768px) {
+    .admin-wrap {
+        flex-direction: column;
+        /* サイド→上、メイン→下 */
+        min-height: 100vh;
+    }
+
+    /* サイドバーを“上部バー”として横並び化 */
+    .aside {
+        width: 100%;
+        padding: 12px 12px 10px;
+    }
+
+    .brand {
+        font-size: 20px;
+        padding: 4px 6px;
+        margin: 0 0 8px;
+        gap: 8px;
+    }
+
+    /* ナビを横スクロール可能なピル群に */
+    .nav {
+        flex-direction: row;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .nav::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, .15);
+        border-radius: 999px;
+    }
+
+    .nav-item {
+        white-space: nowrap;
+        padding: 8px 10px;
+        border-radius: 999px;
+        font-size: 14px;
+    }
+
+    /* ログアウトは右寄せ配置に（行の最後に来る） */
+    .logout {
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .logout-btn {
+        width: auto;
+        text-align: center;
+        display: inline-block;
+        padding: 8px 10px;
+        border-radius: 999px;
+        font-size: 14px;
+    }
+
+    .main {
+        padding: 16px;
+    }
+}
+
+/* さらに小さい端末（<=480px）：タップしやすく、余白をタイトに */
+@media (max-width: 480px) {
+    .aside {
+        padding: 10px 10px 8px;
+    }
+
+    .brand {
+        font-size: 18px;
+        gap: 6px;
+    }
+
+    .nav {
+        gap: 6px;
+    }
+
+    .nav-item,
+    .logout-btn {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+    .main {
+        padding: 14px;
+    }
+}

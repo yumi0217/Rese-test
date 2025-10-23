@@ -1,0 +1,535 @@
+/* public/css/owners/dashboard.css */
+
+/* ========== レイアウト ========== */
+.owner-wrap {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+.aside {
+    width: 240px;
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 18px 14px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+    margin-bottom: 16px;
+}
+
+.brand-icon {
+    font-size: 30px;
+}
+
+.brand-title {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 8px 0 16px;
+}
+
+.nav-item {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    background: #111827;
+    color: #fff;
+}
+
+.logout .logout-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.main {
+    flex: 1;
+    padding: 24px;
+}
+
+/* ========== ページ ========== */
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: .02em;
+    margin: 0 0 16px;
+}
+
+/* ========== カード/テーブル/ボタン ========== */
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .03);
+    padding: 18px;
+    margin: 16px 0;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0 0 12px;
+}
+
+.muted {
+    color: #6b7280;
+}
+
+.resv-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.resv-table th,
+.resv-table td {
+    padding: 12px;
+    border-bottom: 1px solid #edf2f7;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.resv-table th {
+    color: #6b7280;
+    font-weight: 700;
+}
+
+.resv-table tr:last-child td {
+    border-bottom: none;
+}
+
+.action-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn.outline {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    color: #111827;
+}
+
+.btn.outline:hover {
+    filter: brightness(.98);
+}
+
+.btn.small {
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.btn.text {
+    background: transparent;
+    color: #2563eb;
+    padding: 6px 8px;
+}
+
+
+
+/* ========== KPIヘッダ ========== */
+.owner-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.owner-field-label {
+    color: #6b7280;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.owner-field-value {
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 2px;
+}
+
+.owner-meta {
+    display: flex;
+    gap: 16px;
+}
+
+.owner-meta .metric {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+.metric-label {
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.metric-value {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+
+
+/* ========== 予約フィルタ ========== */
+.resv-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 8px 0 14px;
+}
+
+.resv-filter label {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: #374151;
+    font-size: 14px;
+}
+
+.resv-filter input[type="date"],
+.resv-filter input[type="time"] {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 6px 8px;
+}
+
+/* ========== レビュー共通 ========== */
+.stars {
+    display: inline-flex;
+    gap: 2px;
+    vertical-align: middle;
+}
+
+.star {
+    font-size: 14px;
+    color: #fbbf24;
+}
+
+/* amber-400 */
+.star.off {
+    color: #e5e7eb;
+}
+
+/* gray-200 */
+
+.review-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.review-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px;
+    background: #fff;
+}
+
+.review-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.review-meta {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.comment {
+    margin: 6px 0 0;
+    color: #374151;
+    white-space: pre-wrap;
+}
+
+/* ========== 折り畳み（最新レビュー 2件表示） ========== */
+/* 初期：.collapsible に .is-collapsed が付与される（Bladeで付け済み）
+   → 3件目以降を非表示にして“2件だけ”見せる */
+.collapsible.is-collapsed .review-list .review-item:nth-of-type(n+3) {
+    display: none;
+}
+
+/* ぼかしフェード：閉じている時だけ表示 */
+.collapsible .review-list-wrap {
+    position: relative;
+}
+
+.collapsible .fade-mask {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 70%);
+    pointer-events: none;
+}
+
+.collapsible.is-collapsed .fade-mask {
+    display: block;
+}
+
+/* レビュー概要：閉じているときは5行目以降を非表示（=4行だけ見せる） */
+#reviews-summary.is-collapsed .collapse-target tbody tr:nth-of-type(n+5) {
+    display: none;
+}
+
+/* （任意）テーブルの下端に余白が急に切れないよう軽く余白 */
+#reviews-summary .collapse-target {
+    margin-bottom: 2px;
+}
+
+/* =========================
+   Responsive additions
+   ========================= */
+
+/* --- 1024px 以下：少しコンパクトに --- */
+@media (max-width: 1024px) {
+    .page {
+        max-width: 920px;
+        padding: 0 14px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .card-title {
+        font-size: 17px;
+    }
+
+    .owner-field-label {
+        font-size: 24px;
+    }
+
+    .owner-field-value {
+        font-size: 18px;
+    }
+
+    /* テーブルの視認性を少し上げる */
+    .resv-table th,
+    .resv-table td {
+        padding: 10px;
+    }
+}
+
+/* --- 768px 以下：サイドバーを上部帯に、テーブルは横スクロール --- */
+@media (max-width: 768px) {
+    .owner-wrap {
+        display: block;
+    }
+
+    /* サイドバーを上に載せる（横ナビ化） */
+    .aside {
+        width: 100%;
+        padding: 12px 14px;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    .brand {
+        margin: 0 0 8px;
+    }
+
+    .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-item {
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
+
+    .logout {
+        border-top: none;
+        padding-top: 0;
+        margin-left: auto;
+    }
+
+    .logout .logout-btn {
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
+
+    .main {
+        padding: 16px;
+    }
+
+    .page {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .page-title {
+        font-size: 24px;
+        margin: 6px 0 12px;
+    }
+
+    .card {
+        margin: 12px 0;
+        padding: 14px;
+    }
+
+    .action-row {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .btn.small {
+        padding: 6px 10px;
+    }
+
+    /* KPI メタを縦積み */
+    .owner-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* 予約フィルタを折り返し */
+    .resv-filter {
+        gap: 8px;
+    }
+
+    .resv-filter label {
+        font-size: 13px;
+    }
+
+    /* テーブルを横スクロール可能に（HTML変更なし） */
+    .resv-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    .resv-table th,
+    .resv-table td {
+        white-space: nowrap;
+    }
+}
+
+/* --- 560px 以下：ボタンはフル幅、余白タイトに --- */
+@media (max-width: 560px) {
+    .page {
+        padding: 0 12px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .brand-title {
+        font-size: 18px;
+    }
+
+    .brand-icon {
+        font-size: 26px;
+    }
+
+    .nav-item,
+    .logout .logout-btn {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn.small {
+        width: auto;
+    }
+
+    .review-head {
+        gap: 6px;
+    }
+
+    .comment {
+        font-size: 14px;
+    }
+
+    /* レビューの星を少し大きめにしてタップしやすく */
+    .star {
+        font-size: 16px;
+    }
+}
+
+/* --- 400px 以下：さらに詰める --- */
+@media (max-width: 400px) {
+    .nav {
+        gap: 6px;
+    }
+
+    .nav-item {
+        padding: 6px 8px;
+    }
+
+    .metric-value {
+        font-size: 18px;
+    }
+
+    .owner-field-label {
+        font-size: 20px;
+    }
+
+    .owner-field-value {
+        font-size: 16px;
+    }
+}

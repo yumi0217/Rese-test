@@ -13,6 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            AdminUserSeeder::class,
+            AreasTableSeeder::class,
+            GenresTableSeeder::class,
+            RestaurantsTableSeeder::class,
+            UsersTableSeeder::class,          // 先にオーナーを作る
+            RestaurantOwnerSeeder::class,     // 最後に割り当て
+        ]);
     }
 }

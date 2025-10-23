@@ -1,0 +1,246 @@
+.page {
+    max-width: 960px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: .02em;
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.alert.success {
+    background: #e6ffed;
+    border: 1px solid #b7ebc6;
+}
+
+.alert.info {
+    background: #eef6ff;
+    border: 1px solid #c7e0ff;
+}
+
+/* 枠のスタイル（白カード＋薄い影＋角丸） */
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 16px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .03);
+}
+
+/* 未作成のメッセージ枠を大きめに中央寄せ */
+.empty-box {
+    padding: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.muted {
+    color: #6b7280;
+}
+
+/* 代表者表示カード */
+.owner-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .03);
+}
+
+.owner-name {
+    font-size: 20px;
+}
+
+.owner-email {
+    color: #374151;
+    margin-top: 4px;
+    font-size: 20px;
+}
+
+.icon-button {
+    text-decoration: none;
+    font-size: 30px;
+}
+
+/* 使わないボタンの見た目は残してもOKだが、ページ上には出ません */
+.btn-primary {
+    display: none;
+}
+
+.owner-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #10b981;
+    /* 文字色 */
+    background: #eef2ff;
+    /* 薄い青背景 */
+    border-radius: 999px;
+    /* ピル型 */
+    margin-bottom: 6px;
+}
+
+/* ダッシュボードのカード幅をしぼる */
+.dashboard .owner-card,
+.dashboard .card {
+    max-width: 640px;
+    /* ここを 520〜680px で好みに調整 */
+    margin: 16px auto;
+    /* 中央寄せ */
+}
+
+/* 余白も少しタイトに（任意） */
+.dashboard .owner-card {
+    padding: 14px 16px;
+}
+
+.owner-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px
+}
+
+.owner-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .03)
+}
+
+.owner-tag {
+    display: inline-block;
+    background: #e7f7ef;
+    color: #10b981;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    margin-bottom: 6px
+}
+
+.owner-name {
+    font-weight: 700;
+    font-size: 16px
+}
+
+.owner-email {
+    color: #374151;
+    margin-top: 2px;
+    font-size: 14px
+}
+
+.icon-button {
+    text-decoration: none;
+    font-size: 18px
+}
+
+/* ===== Responsive (<= 768px) ===== */
+@media (max-width: 768px) {
+    .page {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .page-title {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+
+    .card,
+    .owner-card {
+        margin: 12px 0;
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    /* ダッシュボードのカード幅しぼりは解除して横幅活用 */
+    .dashboard .owner-card,
+    .dashboard .card {
+        max-width: none;
+        margin: 12px 0;
+    }
+
+    /* 代表者カードの中身を縦積みに */
+    .owner-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .owner-name {
+        font-size: 18px;
+    }
+
+    .owner-email {
+        font-size: 14px;
+    }
+
+    .owner-tag {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .icon-button {
+        font-size: 20px;
+        align-self: flex-end;
+    }
+
+    /* 一覧は2→1列に落ちるよう最小幅を小さめに */
+    .owner-list {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+    }
+}
+
+/* ===== Tight phones (<= 480px) ===== */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 22px;
+    }
+
+    .card,
+    .owner-card {
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .owner-name {
+        font-size: 17px;
+    }
+
+    .owner-email {
+        font-size: 13px;
+    }
+
+    .owner-list {
+        grid-template-columns: 1fr;
+        /* 1列 */
+        gap: 10px;
+    }
+
+    .icon-button {
+        font-size: 18px;
+    }
+}

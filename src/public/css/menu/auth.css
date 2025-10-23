@@ -1,0 +1,102 @@
+/* 既存 */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* 上寄せ */
+    height: calc(100vh - 60px);
+    padding-top: 30vh;
+    /* 同じ位置 */
+    gap: 20px;
+}
+
+.menu a {
+    font-size: 22px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* ▼ 追加：Logout をリンクと同じ見た目に */
+.menu__logout {
+    margin: 0;
+}
+
+.menu__link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 22px;
+    color: #2563eb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu__link-btn:hover {
+    text-decoration: underline;
+}
+
+/* Logoutボタンをリンクと同じ見た目に */
+.menu form {
+    margin: 0;
+}
+
+.menu form button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    /* a と同じフォントサイズ等にする */
+    font-size: 22px;
+    color: #2563eb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu form button:hover {
+    text-decoration: underline;
+}
+
+/* ===== 768px未満：タブレット縦・スマホ向け ===== */
+@media (max-width: 767.98px) {
+    .menu {
+        height: auto;
+        /* 画面が低い端末でもはみ出さない */
+        padding-top: 48px;
+        /* 上余白を控えめに */
+        padding-bottom: 32px;
+        gap: 14px;
+    }
+
+    /* a / 擬リンクボタン / ログアウトボタンを同じ見た目に */
+    .menu a,
+    .menu__link-btn,
+    .menu form button {
+        display: block;
+        width: min(92vw, 520px);
+        text-align: center;
+        font-size: 18px;
+        /* モバイル読みやすいサイズ */
+        line-height: 1.2;
+        padding: 14px 16px;
+        /* タップ領域を拡大 */
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        background: #fff;
+        text-decoration: none;
+        /* モバイルは下線なし */
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ホバーは軽く（スマホではほぼ出ないが一応） */
+    .menu a:hover,
+    .menu__link-btn:hover,
+    .menu form button:hover {
+        filter: brightness(.98);
+        text-decoration: none;
+    }
+}

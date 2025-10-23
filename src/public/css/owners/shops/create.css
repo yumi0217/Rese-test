@@ -1,0 +1,247 @@
+.page {
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.breadcrumb {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.breadcrumb .crumb {
+    color: #6b7280;
+    text-decoration: none;
+}
+
+.breadcrumb .sep {
+    margin: 0 6px;
+    color: #9ca3af;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .03);
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 18px;
+}
+
+.preview {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.file {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: 1px dashed #9ca3af;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #374151;
+}
+
+.file input {
+    display: none;
+}
+
+.field {
+    margin-bottom: 14px;
+}
+
+.field label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.field.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 6px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn.primary {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+}
+
+.btn.ghost {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+@media (max-width: 900px) {
+    .columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ぜんぶ border-box にしてはみ出し防止 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* グリッド内のカラムが縮められるように */
+.col,
+.fields {
+    min-width: 0;
+}
+
+/* フォーム要素のはみ出し抑制 */
+.field input,
+.field select,
+.field textarea {
+    max-width: 100%;
+    display: block;
+    /* ↑ box-sizing:border-box とセットで効く */
+}
+
+/* 念のため、親カードでオーバーフローを隠す */
+.card {
+    overflow: hidden;
+}
+
+/* =========================
+   Responsive refinements
+   ========================= */
+
+/* 1024px 以下：余白と文字を少しタイトに */
+@media (max-width: 1024px) {
+    .page {
+        max-width: 980px;
+    }
+
+    .page-title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        padding: 14px;
+    }
+}
+
+/* 768px 以下：フォーム操作しやすく・縦積みを強化 */
+@media (max-width: 768px) {
+    .page {
+        padding: 0 12px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    /* 2分割フィールドは1列に */
+    .field.grid-2 {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* 画像プレビューは比率優先で高さ自動に */
+    .preview {
+        aspect-ratio: 4/3;
+        height: auto;
+    }
+
+    /* ボタンは広め＆折り返しOK */
+    .actions {
+        justify-content: stretch;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .actions .btn {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    /* ファイル選択を全幅にしてタップしやすく */
+    .file {
+        width: 100%;
+        text-align: center;
+        padding: 10px 12px;
+    }
+}
+
+/* 480px 以下：最小端末向けの微調整 */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 10px 14px;
+        border-radius: 8px;
+    }
+
+    .field label {
+        font-size: 14px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+        font-size: 14px;
+        padding: 9px 10px;
+    }
+}
