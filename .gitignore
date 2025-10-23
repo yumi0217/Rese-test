@@ -4,3 +4,7 @@ docker/mysql/logs/*
 !docker/mysql/logs/.gitkeep
 src/.env
 src/.env.*
+src/.env
+src/.env.*
+src/.env.*.bak*
+src/.env.bak.*
