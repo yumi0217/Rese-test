@@ -8,3 +8,7 @@ src/.env
 src/.env.*
 src/.env.*.bak*
 src/.env.bak.*
+src/.env
+src/.env.*
+src/.env.*.bak*
+src/.env.bak.*
